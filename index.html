@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizarra</title>
+    <link rel="stylesheet" href="./css/pizarra-grid.css" />
+    <link rel="icon" href="./imagenes/iconos/logoApp.png" type="image/png" />
+    <!-- FontAwesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/7d303211a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./javascript/pizarra.js"></script> -->
+    <script src="./javascript/pizarra-copy.js"></script>
+  </head>
+  <body>
+    <section>
+      <article class="panel-info">
+        <!-- Panel info que da la bienvenida e informa sobre lo que visualizarán -->
+        <div class="info">
+          <p>Bienvenid@ a <span class="eslogan">Dibujando Sonrisas</span></p>
+          <p>
+            Un mundo mágico donde cada trazo y cada color se convierten en una
+            aventura. Aquí, la imaginación de los niños cobra vida,
+            transformando sus sueños en obras de arte vibrantes. ¡Únete a
+            nosotros y descubre el artista que llevas dentro!
+          </p>
+          <button class="iniciar">¡Iniciar Aventura!</button>
+        </div>
+      </article>
+      <article class="contenedorpizarra">
+        <!-- Contenedor para el título y las imagenes -->
+        <div class="titulo">
+          <img src="./imagenes/iconos/dibujo(1).png" alt="icono pizarra" />
+          <h1>Diviértete Pintando</h1>
+          <img src="./imagenes/iconos/dibujo2.png" alt="icono pizarra" />
+        </div>
+
+        <div class="dibujos-derecha">
+          <img src="./imagenes/dibujos/Imagen7.png" alt="Imagen de una montaña">
+          <img src="./imagenes/dibujos/Imagen8.png" alt="Imagen del fondo marino">
+          <img src="./imagenes/dibujos/Imagen9.png" alt="Imagen de un gato">
+        </div>
+
+        <div class="dibujos-izquierda">
+          <img src="./imagenes/dibujos/Imagen4.png" alt="Imagen de un planeta">
+          <img src="./imagenes/dibujos/Imagen5.png" alt="Imagen de un batido">
+          <img src="./imagenes/dibujos/Imagen6.png" alt="Imagen de una ballena">
+        </div>
+
+        <!-- Componente que permite al usuario pintar -->
+        <canvas id="canvas" width="900px" height="350"></canvas>
+
+        <!-- Contenedor que permite al usuario elegir un color para pintar-->
+        <input type="color" class="recoger-color" />
+
+        <!-- Contenedor para los diferentes grosores del lápiz -->
+        <div class="grosor-pincel">
+          <div class="grosor1" data-grosor="4"></div>
+          <div class="grosor2" data-grosor="8"></div>
+          <div class="grosor3" data-grosor="12"></div>
+          <div class="grosor4" data-grosor="16"></div>
+        </div>
+
+        <!-- Contenedor para los diferentes tipos de lápiz -->
+        <div class="opciones-pincel">
+          <!-- Pincel -->
+          <img src="./imagenes/iconos/lapiz.png" alt="lápiz" class="pincel" />
+          <!-- Goma de borrar -->
+          <img
+            src="./imagenes/iconos/goma-de-borrar.png"
+            alt="goma de borrar"
+            class="gomaBorrar"
+          />
+          <!-- Repetir -->
+          <img
+            src="./imagenes/iconos/bote-de-basura.png"
+            alt="borrar todo"
+            class="borrar-todo"
+          />
+          <!-- Pintar el fondo del contenedor -->
+          <img
+            src="./imagenes/iconos/cubo-de-pintura.png"
+            alt="pintar fondo"
+            class="pintar-fondo"
+          />
+          <!-- Subrayador -->
+          <img
+            src="./imagenes/iconos/marcador.png"
+            alt="subrayador"
+            class="subrayador"
+          />
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

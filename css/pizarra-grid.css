@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+@import url(../css/reset.css);
+
+:root {
+  --letraEslogan: "Rubik Burned", system-ui;
+  --letraInfo: "Josefin Sans", sans-serif;
+  --letraFina: "Grape Nuts", cursive;
+  --colorDifunminado: rgba(215, 206, 206, 0.8);
+  --sombra: 2px 8px 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  user-select: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../imagenes/fondo.jpg);
+  background-image: url(../imagenes/fondo-corazon.jpg);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.panel-info {
+  width: 50vw;
+  height: 50vh;
+  backdrop-filter: blur(15px); /**Aplica transparencia al contenedor**/
+  background-color: var(--colorDifunminado);
+  box-shadow: var(--sombra); /**Sombra del contenedor**/
+  border-radius: 25px;
+  position: absolute;
+  transition: top 0.5s ease;
+}
+
+.info {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: justify;
+  flex-direction: column;
+  position: absolute;
+  gap: 2.5em;
+  padding: 60px;
+}
+
+.info p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--letraInfo);
+  font-family: "Bungee Spice", sans-serif;
+  color: #000;
+}
+
+.info p:nth-child(1) {
+  font-family: var(--letraEslogan);
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(4, 4, 4);
+}
+
+.info button {
+  border-radius: 25px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--letraFinaInfo);
+  background-color: antiquewhite;
+}
+
+.contenedorpizarra {
+  width: 84vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 15% 70% 15%;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  top: -1000px;
+  box-shadow: var(--sombra); /**Sombra del contenedor**/
+  background-color: #acac71;
+  background-color: var(--colorDifunminado);
+  backdrop-filter: blur(50px); /**Aplica transparencia al contenedor**/
+  transition: top 0.5s ease;
+  padding: 30px;
+  gap: 5px;
+  border-radius: 15px;
+}
+
+.titulo {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  font-family: "Single Day", cursive;
+  color: #3f3f39;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#canvas {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  background-color: rgba(210, 223, 235, 0.479);
+  box-shadow: var(--sombra); /**Sombra del contenedor**/
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+input[type="color"] {
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  box-shadow: var(--sombra); /**Sombra del contenedor**/
+  border-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /**Transición suave**/
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.opciones-pincel {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  cursor: pointer;
+}
+
+.opciones-pincel :hover {
+  transform: scale(1.2);
+}
+
+.grosor-pincel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.grosor-pincel div {
+  width: 40px;
+  background-color: #000;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: box-shadow 0.3s ease; /**Transición suave**/
+}
+
+input[type="color"]:hover,
+.grosor-pincel div:hover {
+  box-shadow: var(--sombra); /**Efecto hover**/
+  cursor: pointer;
+}
+
+.grosor-pincel .grosor1 {
+  height: 10px;
+}
+
+.grosor-pincel .grosor2 {
+  height: 20px;
+}
+
+.grosor-pincel .grosor3 {
+  height: 30px;
+}
+
+.grosor-pincel .grosor4 {
+  height: 40px;
+}
+
+.dibujos-izquierda,
+.dibujos-derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.dibujos-izquierda img,
+.dibujos-derecha img {
+  max-height: 100px;
+  max-width: 100px;
+  border-radius: 15px;
+  box-shadow: var(--sombra);
+}
+
+.dibujos-izquierda {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.dibujos-derecha {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
